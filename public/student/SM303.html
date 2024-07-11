@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Genota K. A., Sales, L.M., & Trias, L. I. (2024)">
+        <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
+        <link rel="icon" type="image/x-icon" href="../icon.ico">
+        <title>SM303</title>
+        <link id="light-theme" rel="stylesheet" type="text/css" href="../dashboard.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="../darkmode.css" disabled>
+        <script defer src="../dashboard.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="../dashboard.html" target="_self">
+                <img id="logo"src="../logo.png" alt="iLABu logo" height="100">
+            </a>
+            <h1>St. Miguel Hall Room 303</h1>
+            <div id="icons">
+                <a href="../profile.html"><img src="../pfp.png" height="50px"></a>
+                <label for="optionsCheckbox" id="optionsIcon"></label>
+            </div>
+        </header>
+        <input type="checkbox" id="optionsCheckbox">
+        <ul id="options">
+            <a href="../register.html" target="_blank"><li>Register</li></a>
+            <label for="login" id="loginbutton"><li>Log In</li></label>
+            <a href="#" target="_blank"><li>Settings</li></a>
+            <input type="checkbox" id="darkmode">
+            <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
+            <a href="#" target="_blank"><li>Credits</li></a>
+            <a href="../dashboard.html" target="_self"><li>Log Out</li></a>
+        </ul>
+        <input type="checkbox" id="login">
+        <form id="loginform">
+            <button class="close">x</button>
+            <label for="email">Please enter your DLSU email:</label>
+            <input type="email" id="email" required pattern=".+@dlsu\.edu\.ph"><br>
+            <label for="password">Please enter your password:</label>
+            <input type="password" id="password" required><br>
+            <input type="submit" value="Log in">
+            <h3>Don't have an account yet?</h3>
+            <a href="../register.html" target="_blank">Register</a>
+        </form>
+        <main>
+            <nav>
+                <ul id="labs">
+                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 212</li></a>
+                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 229</li></a>
+                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 320</li></a>
+                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 335</li></a>
+                    <a class="room" href="../SJ/SJ212.html" target="_blank"><li>SJ 212</li></a>
+                    <a class="room" href="../SJ/SJ308.html" target="_blank"><li>SJ 308</li></a>
+                    <a class="room" href="../Velasco/VL101.html" target="_blank"><li>VL 101</li></a>
+                    <a class="room" href="../Velasco/VL103.html" target="_blank"><li>VL 103</li></a>
+                    <a class="room" href="../Velasco/VL107.html" target="_blank"><li>VL 107</li></a>
+                    <a class="room" href="../Velasco/VL208.html" target="_blank"><li>VL 208</li></a>
+                    <a class="room" href="../Velasco/VL310.html" target="_blank"><li>VL 310</li></a>
+                    <a class="room" href="../Velasco/VL313.html" target="_blank"><li>VL 313</li></a>
+                    <a class="room" href="../Velasco/VL505.html" target="_blank"><li>VL 505</li></a>
+                    <a class="room" href="../Goks/GK302.html" target="_blank"><li>GK 302</li></a>
+                    <a class="room" href="../Goks/GK304A.html" target="_blank"><li>GK 304A</li></a>
+                    <a class="room" href="../Goks/GK304B.html" target="_blank"><li>GK 304B</li></a>
+                    <a class="room" href="../Goks/GK404.html" target="_blank"><li>GK 404</li></a>
+                    <a class="room" href="../STRC/ST218.html" target="_blank"><li>ST 218</li></a>
+                    <a class="room" href="../STRC/ST223.html" target="_blank"><li>ST 223</li></a>
+                    <a class="room" href="../STRC/ST314.html" target="_blank"><li>ST 314</li></a>
+                    <a class="room" href="../Andrew/AG1706.html" target="_blank"><li>AG 1706</li></a>
+                    <a class="room" href="../Andrew/AG1904.html" target="_blank"><li>AG 1904</li></a>
+                </ul>
+            </nav>
+            <form>
+                <div id="info">
+                    <br>
+                    <h2>36 Slots Available</h2>
+                    <br>
+                    <div id="checkboxes">
+                        <input type="radio"name="slot" id="s1">
+                        <input type="radio"name="slot" id="s2">
+                        <input type="radio"name="slot" id="s3">
+                        <input type="radio"name="slot" id="s4">
+                        <input type="radio"name="slot" id="s5">
+                        <input type="radio"name="slot" id="s6">
+                        <input type="radio"name="slot" id="s7">
+                        <input type="radio"name="slot" id="s8">
+                        <input type="radio"name="slot" id="s9">
+                        <input type="radio"name="slot" id="s10">
+                        <input type="radio"name="slot" id="s11">
+                        <input type="radio"name="slot" id="s12">
+                        <input type="radio"name="slot" id="s13">
+                        <input type="radio"name="slot" id="s14">
+                        <input type="radio"name="slot" id="s15">
+                        <input type="radio"name="slot" id="s16">
+                        <input type="radio"name="slot" id="s17">
+                        <input type="radio"name="slot" id="s18">
+                        <input type="radio"name="slot" id="s19">
+                        <input type="radio"name="slot" id="s20">
+                        <input type="radio"name="slot" id="s21">
+                        <input type="radio"name="slot" id="s22">
+                        <input type="radio"name="slot" id="s23">
+                        <input type="radio"name="slot" id="s24">
+                        <input type="radio"name="slot" id="s25">
+                        <input type="radio"name="slot" id="s26">
+                        <input type="radio"name="slot" id="s27">
+                        <input type="radio"name="slot" id="s28">
+                        <input type="radio"name="slot" id="s29">
+                        <input type="radio"name="slot" id="s30">
+                        <input type="radio"name="slot" id="s31">
+                        <input type="radio"name="slot" id="s32">
+                        <input type="radio"name="slot" id="s33">
+                        <input type="radio"name="slot" id="s34">
+                        <input type="radio"name="slot" id="s35">
+                        <input type="radio"name="slot" id="s36">
+                    </div>              
+                    <table>
+                        <tr>
+                            <td class="space"></td>
+                            <td><label for="s1">1</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s2">2</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s3">3</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                            <td class="space"></td>
+                            <td><label for="s4">4</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s5">5</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s6">6</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                        </tr>
+                        <tr>
+                            <td class="space"></td>
+                            <td><label for="s7">7</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s8">8</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s9">9</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>       
+                            <td class="space"></td>
+                            <td><label for="s10">10</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s11">11</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s12">12</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                        </tr>
+                        <tr>
+                            <td class="space"></td>
+                            <td><label for="s13">13</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s14">14</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s15">15</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                            <td class="space"></td>
+                            <td><label for="s16">16</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s17">17</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s18">18</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                        </tr>
+                        <tr>
+                            <td class="space"></td>                  
+                            <td><label for="s19">19</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s20">20</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s21">21</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                            <td class="space"></td>       
+                            <td><label for="s22">22</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s23">23</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s24">24</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                        </tr>
+                        <tr>
+                            <td class="space"></td>
+                            <td><label for="s25">25</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s26">26</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s27">27</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>                          
+                            <td class="space"></td>
+                            <td><label for="s28">28</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s29">29</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s30">30</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                        </tr>
+                        <tr>
+                            <td class="space"></td>                      
+                            <td><label for="s31">31</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s32">32</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s33">33</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>
+                            <td class="space"></td>
+                            <td><label for="s34">34</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s35">35</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s36">36</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="space"></td>                            
+                        </tr>
+                    </table> 
+                    <div id="reservation">
+                        <div id="schedule">
+                            <input type="date" required>
+                            <input type="time" required>
+                        </div>
+                        <input id="reserve" type="submit" value="Reserve" disabled></input>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <script src="../room.js"></script>
+    </body>
+</html>

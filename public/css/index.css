@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(22.47deg, #3A5A40 55.17%, #344E41 84.51%);
+    font-family: "Fredoka", sans-serif;
+    font-weight: normal;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(0deg, #D9D9D9, #D9D9D9);
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right:0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo img {
+    width: 104px;
+    wight: 104px;
+    left: 203px;
+    top: 29px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-left: 8rem;
+}
+
+.logo h2 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    color: #588157;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    justify-content: space-between;
+
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #1E1E1E;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+
+.nav-links li a:hover {
+    color: #3A5A40;
+}
+
+.register-button {
+    border: none;
+    cursor: pointer;
+    margin-right: 10rem;
+    background: #3A5A40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 227px;
+    height: 69px;
+    left: 1489px;
+    top: 47px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #D9D9D9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Fredoka", sans-serif;
+}
+
+.register-button:hover {
+    background-color: #588157;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    top: 1rem;
+    background-image: url("../images/heroimagegradient.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: 1rem;
+    margin-right: 1rem;
+    scroll-snap-align: start;
+}
+
+.hero-section-rectangle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    max-width: 50%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-content p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    padding-right: 5rem;
+    line-height: 72px;
+    color: #1E1E1E;
+    
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.admin-button {
+    border: none;
+    cursor: pointer;
+    background: #3A5A40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 227px;
+    height: 69px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    color: #D9D9D9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Fredoka", sans-serif;
+}
+
+.admin-button:hover {
+    background-color: #588157;
+}
+
+.services-section {
+    margin-top: 3rem;
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 6rem;
+    scroll-snap-align: start;
+}
+
+.services-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #588157;
+}
+
+.services-section h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 46px;
+    text-align: center;
+    color: #DAD7DC;
+    padding-bottom: 2rem;
+
+}
+
+.services-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.service-card {
+    color: #3A5A40;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    background: #D9D9D9;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.service-card h4 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+
+}
+
+.service-card a {
+    display: flex;
+    align-items: center;
+    color: #588157;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+    justify-content: space-between;
+}
+
+.service-card a span {
+    margin-right: 5px;
+    transition: margin-right 0.3s;
+}
+
+.service-card a:hover span {
+    margin-right: 10px;
+}
+

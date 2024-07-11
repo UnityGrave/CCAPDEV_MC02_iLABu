@@ -1,0 +1,253 @@
+
+body{
+    background-color:#111111;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(22.47deg, #111111 55.17%, #222222 84.51%);
+}
+
+#logo{
+    filter: grayscale() brightness(3);
+}
+
+#optionsIcon{
+    filter: grayscale() brightness(100);
+}
+
+#optionsIcon:hover{
+    filter: grayscale() brightness(100);
+}
+
+#darkmode:checked ~ #darkbutton li{
+    background-color: #EEEEEE;
+    color: #111111;
+}
+
+a {
+    color: #EEEEEE;
+}
+
+a:hover {
+    color: #222222;
+ }
+
+
+header{
+    color: #EEEEEE;
+    background: linear-gradient(to right, transparent 1%, #222222 70%); 
+}
+
+#optionsCheckbox:checked ~ #options {
+    background: linear-gradient(to right, transparent 1%, #222222 85%); 
+    color: #EEEEEE;
+}
+
+#options li{
+    border:#EEEEEE solid;
+    background-color: #22222299;
+}
+
+nav{
+    background-color: #111111;
+}
+
+#labs{
+    border: #EEEEEE solid;
+    background-color: #111111;
+    color: #EEEEEE;
+}
+
+
+#labs li{
+    border:#EEEEEE solid;
+    background-color: #222222;
+}
+
+#labs li:hover, #options li:hover{
+    background-color: #EEEEEE;
+    color: #111111;
+}
+
+#login:checked ~ #loginform{
+    color: #EEEEEE;
+    background-color: #222222;
+    border: #EEEEEE solid 10px;
+}
+
+
+input[type="submit"], input[type="email"], input[type="password"]{
+    border: #EEEEEE solid;
+    background-color: #FFFFFF solid;
+}
+
+input[type="submit"]{
+    color: #EEEEEE;
+    border: #EEEEEE solid;
+    background-color: #111111 ;
+}
+
+input[type="submit"]:hover{
+    color: #111111;
+    background-color: #EEEEEE ;
+}
+
+#info{
+    background-color: #222222;
+    color: #EEEEEE;
+    border: #EEEEEE solid;
+}
+
+#info h2 , .floor{
+    background: linear-gradient(to left, transparent 0.1%, #EEEEEE 50%); 
+    color: #222222;
+}
+
+
+td{
+    border: #EEEEEE solid;
+    background-color: #22222299;
+    filter: drop-shadow(7px 7px #111111);
+}
+
+td:hover{
+    background-color: #EEEEEE;
+    color: #111111;
+}
+
+
+input[type="date"] , input[type="time"]{
+    background-color: #222222CC;
+    border: #EEEEEE solid;
+    color: #EEEEEE;
+    filter: drop-shadow(7px 7px #111111);
+}
+
+
+#reserve{
+    background:linear-gradient(to right, transparent 0.1%, #EEEEEE 70%);
+    color: #111111;
+}
+
+
+#loginform a , #indexlogin a{
+    border: #EEEEEE solid;
+
+}
+
+#loginform a:hover, #indexlogin a:hover{
+    background-color: #EEEEEE;
+    color: #111111;
+}
+
+#campus .building{
+    filter: brightness(75%) grayscale(50%);
+}
+
+#campus .building a{
+    color: #111111;
+}
+
+#campus .building:hover{
+    filter: brightness(80%);
+}
+
+#sidebar{
+    background-color:#222222;
+}
+
+
+#sidebar h1,#sidebar h2{
+    color: #EEEEEE;
+}
+
+#indexlogin{
+
+    color: #EEEEEE;
+}
+
+.floor{
+    color: #222222;
+}
+
+#student , #technician{
+    background: linear-gradient(to top, transparent 1%, #222222 100%); 
+    color: #EEEEEE;
+    filter: grayscale();
+}
+
+#student img, #technician img {
+    filter: brightness(5);
+}
+
+#student:checked ~ #registerform , #technician:checked ~ #registerform{
+    color: #EEEEEE;
+    background-color: #222222;
+    border: #EEEEEE solid 10px;
+}
+
+
+#hall{
+    color: #111111;
+    border: 5px #EEEEEE solid;
+    background-color: #111111;
+}
+
+#hall a {
+    filter: drop-shadow(10px 10px #222222);
+}
+
+.close{
+    border-bottom: #EEEEEE solid 5px;
+    border-left: #EEEEEE solid 5px;
+}
+
+.selected {
+    filter: drop-shadow(0px 0px) grayscale();
+    color: #EEEEEE;
+}
+
+.selected:hover {
+    color: #EEEEEE;
+}
+
+.taken{
+    background-color: #333333;
+    color: #000000;
+}
+
+.cloned-reservedetails{
+    background-color: #111111;
+    color: #EEEEEE;
+    border: #EEEEEE 4px solid;
+}
+
+.cloned-reservedetails:hover{
+    color: #EEEEEE;
+}
+
+.profile-container {
+    display: flex;
+    color: #EEEEEE;
+    align-items:center;
+    justify-content:flex-start;
+    margin-top: 3vh;
+    background-color: #222222;
+ }
+
+ .reservations-container {
+    color: #EEEEEE;
+    border: 5px #EEEEEE solid;
+    background-color: #111111;
+}
+
+ .reservations-container a {
+    margin-left: 2vw;
+    margin-bottom: 5vh;
+    color: #EEEEEE;
+    padding: 4vmin;
+    border-radius: 30px;
+    background-size: cover;
+    background-position:center;
+    filter: drop-shadow(10px 10px #222222);
+}
+
+
+
