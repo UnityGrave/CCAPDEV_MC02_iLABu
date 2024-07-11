@@ -10,21 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link id="light-theme" rel="stylesheet" type="text/css" href="settings.css">
-    <link id="dark-theme" rel="stylesheet" type="text/css" href="darkmode.css" disabled>
-    <script defer src="dashboard.js"></script>
+    <link id="light-theme" rel="stylesheet" type="text/css" href="../css/settings.css">
+    <link id="dark-theme" rel="stylesheet" type="text/css" href="../css/darkmode.css" disabled>
+    <script defer src="../dashboard.js"></script>
 </head>
 <body>
     <header>
-        <a href="dashboard.html" target="_self">
-            <img id="logo" src="logo.png" alt="iLABu logo" height="100">
+        <a href="/dashboard" target="_self">
+            <img id="logo" src="../images/logo.png" alt="iLABu logo" height="100">
         </a>
         <h1>Settings</h1>
         <label for="optionsCheckbox" id="optionsIcon"></label>
     </header>
     <input type="checkbox" id="optionsCheckbox">
     <ul id="options">
-        <a href="settings.html" target="_blank"><li>Settings</li></a>
+        <a href="/settings" target="_blank"><li>Settings</li></a>
         <input type="checkbox" id="darkmode">
         <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
@@ -34,7 +34,7 @@
     <ul class="settings-container">
         <a><label for="deleteaccount" id="delete"><li>Delete Account</li></label></a>
         <a><label for="clearreservations" id="clear"><li>Clear Reservations</li></label></a>
-        <a href="profileedit.html" target="_blank"><li>Edit Profile</li></a>
+        <a href="/profileedit" target="_blank"><li>Edit Profile</li></a>
     </ul>
     <input type="checkbox" id="deleteaccount">
     <form id="deleteform">

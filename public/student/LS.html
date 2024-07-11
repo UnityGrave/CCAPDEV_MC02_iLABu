@@ -7,25 +7,25 @@
         <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
         <link rel="icon" type="image/x-icon" href="../icon.ico">
         <title>LS Hall</title>
-        <link id="light-theme" rel="stylesheet" type="text/css" href="../dashboard.css">
-        <link id="dark-theme" rel="stylesheet" type="text/css" href="../darkmode.css" disabled>
+        <link id="light-theme" rel="stylesheet" type="text/css" href="../css/dashboard.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="../css/darkmode.css" disabled>
         <script defer src="../dashboard.js"></script>
     </head>
     <body>
         <header>
-            <a href="../dashboard.html" target="_self">
-                <img id="logo"src="../logo.png" alt="iLABu logo" height="100">
+            <a href="/dashboard" target="_self">
+                <img id="logo"src="../images/logo.png" alt="iLABu logo" height="100">
             </a>
             <h1>St. La Salle Hall</h1>
             <div id="icons">
-                <a href="../profile.html"><img src="../pfp.png" height="50px"></a>
+                <a href="/student"><img src="../images/pfp.png" height="50px"></a>
                 <label for="optionsCheckbox" id="optionsIcon"></label>
             </div>
         </header>
         <input type="checkbox" id="optionsCheckbox">
         <ul id="options">
             <label for="login" id="loginbutton"><li>Log In</li></label>
-            <a href="../settings.html" target="_blank"><li>Settings</li></a>
+            <a href="/settings" target="_blank"><li>Settings</li></a>
             <input type="checkbox" id="darkmode">
             <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
@@ -41,17 +41,17 @@
             <input type="password" id="password" required><br>
             <input type="submit" value="Log in">
             <h3>Don't have an account yet?</h3>
-            <a href="../register.html" target="_blank">Register</a>
+            <a href="/register" target="_blank">Register</a>
         </form>
         <main id="hall">
             <h2 class="floor">2nd Floor</h2>   
             <ul>
-                <a href="LS212.html" target="_blank" style="background-image: url('LS212.png');">
+                <a href="/LS212" target="_blank" style="background-image: url('../images/LS212.png');">
                     <h2>212</h2>
                     <p>Capacity: 50</p>
                     <p>Available: 50</p>
                 </a>
-                <a href="LS212.html" target="_blank" style="background-image: url('LS212.png');">
+                <!-- <a href="LS212.html" target="_blank" style="background-image: url('LS212.png');">
                     <h2>229</h2>
                     <p>Capacity: 50</p>
                     <p>Available: 50</p>
@@ -69,7 +69,7 @@
                     <p>Capacity: 50</p>
                     <p>Available: 50</p>
                 </a>
-            </ul>
+            </ul> -->
         </main>
     </body>
 </html>

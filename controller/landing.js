@@ -14,4 +14,11 @@ router.get('/dashboard', function(req, res) {
 	res.sendFile(path.join(__dirname + "\\" + "../public/dashboard.html"));
 });
 
+router.get("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.clearCookie("sessionId");
+        res.redirect("/");
+    });
+});
+
 module.exports = router;

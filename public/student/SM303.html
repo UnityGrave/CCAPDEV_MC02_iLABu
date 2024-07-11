@@ -7,26 +7,25 @@
         <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
         <link rel="icon" type="image/x-icon" href="../icon.ico">
         <title>SM303</title>
-        <link id="light-theme" rel="stylesheet" type="text/css" href="../dashboard.css">
-        <link id="dark-theme" rel="stylesheet" type="text/css" href="../darkmode.css" disabled>
+        <link id="light-theme" rel="stylesheet" type="text/css" href="../css/dashboard.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="../css/darkmode.css" disabled>
         <script defer src="../dashboard.js"></script>
     </head>
     <body>
         <header>
-            <a href="../dashboard.html" target="_self">
-                <img id="logo"src="../logo.png" alt="iLABu logo" height="100">
+            <a href="/dashboard" target="_self">
+                <img id="logo"src="../images/logo.png" alt="iLABu logo" height="100">
             </a>
             <h1>St. Miguel Hall Room 303</h1>
             <div id="icons">
-                <a href="../profile.html"><img src="../pfp.png" height="50px"></a>
+                <a href="/student"><img src="../images/pfp.png" height="50px"></a>
                 <label for="optionsCheckbox" id="optionsIcon"></label>
             </div>
         </header>
         <input type="checkbox" id="optionsCheckbox">
         <ul id="options">
-            <a href="../register.html" target="_blank"><li>Register</li></a>
             <label for="login" id="loginbutton"><li>Log In</li></label>
-            <a href="#" target="_blank"><li>Settings</li></a>
+            <a href="/settings" target="_blank"><li>Settings</li></a>
             <input type="checkbox" id="darkmode">
             <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
@@ -42,33 +41,17 @@
             <input type="password" id="password" required><br>
             <input type="submit" value="Log in">
             <h3>Don't have an account yet?</h3>
-            <a href="../register.html" target="_blank">Register</a>
+            <a href="/register" target="_blank">Register</a>
         </form>
         <main>
             <nav>
                 <ul id="labs">
-                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 212</li></a>
-                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 229</li></a>
-                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 320</li></a>
-                    <a class="room" href="../LS/LS212.html" target="_blank"><li>LS 335</li></a>
-                    <a class="room" href="../SJ/SJ212.html" target="_blank"><li>SJ 212</li></a>
-                    <a class="room" href="../SJ/SJ308.html" target="_blank"><li>SJ 308</li></a>
-                    <a class="room" href="../Velasco/VL101.html" target="_blank"><li>VL 101</li></a>
-                    <a class="room" href="../Velasco/VL103.html" target="_blank"><li>VL 103</li></a>
-                    <a class="room" href="../Velasco/VL107.html" target="_blank"><li>VL 107</li></a>
-                    <a class="room" href="../Velasco/VL208.html" target="_blank"><li>VL 208</li></a>
-                    <a class="room" href="../Velasco/VL310.html" target="_blank"><li>VL 310</li></a>
-                    <a class="room" href="../Velasco/VL313.html" target="_blank"><li>VL 313</li></a>
-                    <a class="room" href="../Velasco/VL505.html" target="_blank"><li>VL 505</li></a>
-                    <a class="room" href="../Goks/GK302.html" target="_blank"><li>GK 302</li></a>
-                    <a class="room" href="../Goks/GK304A.html" target="_blank"><li>GK 304A</li></a>
-                    <a class="room" href="../Goks/GK304B.html" target="_blank"><li>GK 304B</li></a>
-                    <a class="room" href="../Goks/GK404.html" target="_blank"><li>GK 404</li></a>
-                    <a class="room" href="../STRC/ST218.html" target="_blank"><li>ST 218</li></a>
-                    <a class="room" href="../STRC/ST223.html" target="_blank"><li>ST 223</li></a>
-                    <a class="room" href="../STRC/ST314.html" target="_blank"><li>ST 314</li></a>
-                    <a class="room" href="../Andrew/AG1706.html" target="_blank"><li>AG 1706</li></a>
-                    <a class="room" href="../Andrew/AG1904.html" target="_blank"><li>AG 1904</li></a>
+                    <a class="room" href="/LS212" target="_blank"><li>LS 212</li></a>
+                    <a class="room" href="/EY602" target="_blank"><li>EY 602</li></a>
+                    <a class="room" href="/VL101" target="_blank"><li>VL 101</li></a>
+                    <a class="room" href="/SM303" target="_blank"><li>SM 303</li></a>
+                    <a class="room" href="/GK301" target="_blank"><li>GK 306</li></a>
+                    <a class="room" href="/AG1706" target="_blank"><li>AG 1706</li></a>
                 </ul>
             </nav>
             <form>
