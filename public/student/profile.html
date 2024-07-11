@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Genota K. A., Sales, L.M., & Trias, L. I. (2024)">
+        <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
+        <link rel="icon" type="image/x-icon" href="icon.ico">
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="profile.css">
+        <link id="light-theme" rel="stylesheet" type="text/css" href="dashboard.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="darkmode.css" disabled>
+        <script defer src="dashboard.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="dashboard.html" target="_self">
+                <img id="logo"src="logo.png" alt="iLABu logo" height="100">
+            </a>
+            <h1>Account Information</h1>
+            <div id="icons">
+                <label for="optionsCheckbox" id="optionsIcon"></label>
+            </div>
+        </header>
+        <input type="checkbox" id="optionsCheckbox">
+        <ul id="options">
+            <a href="settings.html" target="_blank"><li>Settings</li></a>
+            <input type="checkbox" id="darkmode">
+            <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
+            <!-- <a href="#" target="_blank"><li>Credits</li></a> -->
+            <a href="../dashboard.html" target="_self"><li>Log Out</li></a>
+        </ul>
+        <main>
+            <div class = "profile-container">
+                <img id="pfp" src="https://lumiere-a.akamaihd.net/v1/images/marvel-thrawn-alliances-1-preview-article-feature_d5e0ed23.jpeg?region=0,0,1600,900" alt="profile-pic" width="150">
+                                <ul class="categories">
+                                    <li>Last Name: </li>
+                                    <li>First Name: </li>
+                                    <li>Middle Name: </li>
+                                    <li>Degree Program: </li>
+                                    <li>College: </li>
+                                    <li>Email Address: </li>
+                                    <li>Bio: </li>
+                                </ul>
+                                <ul class = "filled">
+                                    <li>Mitth'raw'nuruodo</li>
+                                    <li>Thrawn</li>
+                                    <li>Vurawn</li>
+                                    <li>Doctor of Fine Arts</li>
+                                    <li>Graduate Studies</li>
+                                    <li>grand_admiral_thrawn@dlsu.edu.ph</li>
+                                    <li>Long live the Empire.</li>
+                                </ul>
+                            </div>
+                            <div class="reservations-container">
+                                <h2>Reservations:</h2>
+                                <ul id="reservations-container">
+                                    <a href="LS/LS212.html" style="background-image: url(LS/LS212.png);"><li>
+                                        <h3>LS 212</h3>
+                                        <p>June 28, 2024</p>
+                                        <p>12:00 - 15:00</p>
+                                    </li></a>
+                                </ul>
+                            </div>
+        </main>
+        </body>
+    </html>

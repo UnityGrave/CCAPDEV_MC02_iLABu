@@ -6,22 +6,22 @@ const session = require("express-session")
 const path = require('path')
 const bodyParser = require('body-parser')
 
-// File Uploading
+//For uploading files
 const fileUpload = require('express-fileupload')
 
 const app = new express();
 
-/* Initialize database collections */
+/* Database Collections */
 //const Reservation = require("./model/reservation")
 //const Profile = require("./model/profile")
 //const User = require("./model/user")
 
 
-/*  Importing of Routes From Controller Folder  */
+/*Import route from controller folder  */
+const studentRoutes = require('./controller/student')
 const landingRoutes = require('./controller/landing')
-//const studentRoutes = require('./controller/student')
 
-app.use(express.json()); // use json
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(fileUpload());
@@ -36,10 +36,10 @@ app.use(
         saveUninitialized: false,
     })
 );
-
-/*  Importing of Routes From Controller Folder  */
+/*  Import route from controller folder */
+app.use('/', studentRoutes);
 app.use('/', landingRoutes);
-//app.use('/', studentRoutes);
+
 
 /* Handlebars */
 var hbs = require('hbs')
