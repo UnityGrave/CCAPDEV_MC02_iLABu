@@ -6,8 +6,8 @@ const ResesrveSchema = new mongoose.Schema({
     roomnumber: String,
     building: String,
     date: { type: Date },
-    starttime: { type: Date },
-    endtime: { type: Date }, 
+    startTime: { type: Date },
+    endTime: { type: Date }, 
 })
 
 const Post = mongoose.model('Post', PostSchema)
