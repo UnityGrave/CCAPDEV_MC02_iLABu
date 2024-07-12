@@ -20,6 +20,10 @@ router.get('/LS212', function(req, res) {
 	res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
 });
 
+router.get('/Yuch', function(req, res) {
+	res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
+});
+
 router.get('/EY602', function(req, res) {
 	res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
 });
