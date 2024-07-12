@@ -55,31 +55,13 @@
                             </div>
                             <div class="reservations-container">
                                 <h2>Reservations:</h2>
-                                <script id="reservations-template" type="text/x-handlebars-template">
-                                    <ul id="reservations-container">
-                                    {{#each reservations}}
-                                    <a href="/{{roomnumber}}" style="background-image: url(../images/{{roomnumber}}.png);">
-                                        <li>
-                                            <h3>{{roomnumber}}</h3>
-                                            <p>{{date}}</p>
-                                            <p>{{startTime}} - {{endTime}}</p>
-                                        </li>
-                                    </a>
-                                    {{/each}}
-                                    </ul>
-                                </script>
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', async function() {
-                                        const response = await fetch('/reservations'); // Replace with your reservations endpoint
-                                        const data = await response.json();
-                            
-                                        const reservationsContainer = document.getElementById('reservations-container');
-                                        const templateSource = document.getElementById('reservations-template').innerHTML;
-                                        const template = Handlebars.compile(templateSource);
-                                        reservationsContainer.innerHTML = template({ reservations: data });
-                                    });
-                                    
-                                </script>
+                                <ul id="reservations-container">
+                                    <a href="/LS" style="background-image: url(../images/LS212.png);"><li>
+                                        <h3>LS 212</h3>
+                                        <p>June 28, 2024</p>
+                                        <p>12:00 - 15:00</p>
+                                    </li></a>
+                                </ul>
                             </div>
         </main>
         </body>
