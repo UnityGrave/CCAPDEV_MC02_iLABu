@@ -1,0 +1,10 @@
+<h2>Reservations:</h2>
+<ul id="reservations-container">
+    {{#each userReservations}}
+        <li>
+            <h3>{{ roomnumber }} - {{ building }}</h3>
+            <p>Date: {{ date.toLocaleDateString() }}</p>
+            <p>Time: {{ startTime.toLocaleTimeString() }} - {{ endTime.toLocaleTimeString() }}</p>
+        </li>
+    {{/each}}
+</ul>
