@@ -9,6 +9,6 @@ const ResesrveSchema = new mongoose.Schema({
     endTime: { type: Date }, 
 })
 
-const Post = mongoose.model('Post', PostSchema)
+const Post = mongoose.model('Reserve', ResesrveSchema)
 
-module.exports = Post
+module.exports = Reserve
