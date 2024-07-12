@@ -1,7 +1,23 @@
 var express = require('express');
 const session = require("express-session");
+const bodyParser = require('body-parser');
 var router = express.Router();
 var path = require('path');
+
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+let reservations = [];
+
+app.post('/reserve', (req, res) => {
+    const reservation = req.body;
+    reservations.push(reservation);
+    res.json({ message: 'Reservation successful', reservation });
+});
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
 
 //Student Profile
 router.get('/student', function(req, res) {

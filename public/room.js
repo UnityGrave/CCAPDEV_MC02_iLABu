@@ -101,7 +101,36 @@ function updateReserveButtonState() {
 
 reserveButton.addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById("login").checked = true;        
+    document.getElementById("login").checked = true;
+
+    const selectedSlot = Array.from(slotRadios).find(radio => radio.checked).id;
+    const selectedDate = dateInput.value;
+    const selectedTime = timeInput.value;
+
+    // Extract room name from the current URL
+    const roomName = window.location.pathname.split('/').pop().split('.')[0];
+
+    const reservationData = {
+        slot: selectedSlot,
+        date: selectedDate,
+        time: selectedTime,
+        room: roomName // Include the room name in the reservation data
+    };
+
+    fetch('/reserve', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reservationData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 });
 
 const reservedetailsElements = document.querySelectorAll('td.taken .reservedetails');
