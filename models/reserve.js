@@ -2,7 +2,6 @@ const e = require('express')
 const mongoose = require('mongoose')
 
 const ResesrveSchema = new mongoose.Schema({
-    studentname: String,
     roomnumber: String,
     building: String,
     date: { type: Date },
