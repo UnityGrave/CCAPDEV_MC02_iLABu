@@ -1,25 +1,24 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/')
+mongoose.connect('mongodb://localhost:27017/ilabu')
 
 const express = require('express')
 const session = require("express-session")
-const path = require('path')
 const bodyParser = require('body-parser')
-
-//For uploading files
+const path = require('path')
 const fileUpload = require('express-fileupload')
-
 const app = new express();
 
 /* Database Collections */
-//const Reservation = require("./model/reservation")
-//const Profile = require("./model/profile")
-//const User = require("./model/user")
+const User = require("./model/User")
 
 
 /*Import route from controller folder  */
 const studentRoutes = require('./controller/student')
 const landingRoutes = require('./controller/landing')
+
+/*  Import route from controller folder */
+app.use('/', studentRoutes);
+app.use('/', landingRoutes);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -36,10 +35,6 @@ app.use(
         saveUninitialized: false,
     })
 );
-/*  Import route from controller folder */
-app.use('/', studentRoutes);
-app.use('/', landingRoutes);
-
 
 /* Handlebars */
 var hbs = require('hbs')
