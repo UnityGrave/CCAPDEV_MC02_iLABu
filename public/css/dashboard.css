@@ -195,32 +195,27 @@ h1{
     color: #EFEAE1;
 }
 
-#loginform, #registerform{
+ #registerform{
     display: none;
 }
 
-#login, #darkmode{
+ #darkmode{
     display: none;
 }
 
-#login:checked ~ main{
-    filter: blur(15px);
-    pointer-events: none;
-}
 
-#login:checked ~ #loginform{
-    position: fixed;
+#loginform{
+
     display: flex;
     flex-direction: column;
     color: #12372A;
     background-color: #EEEEEE;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 30px;
     padding: 30px;
+    margin-top: 30px;
     border: #12372A solid 10px;
     z-index: 1;
+    align-items: center;
 }
 
 
@@ -228,6 +223,7 @@ input[type="submit"], input[type="email"], input[type="password"]{
     border-radius: 30px;
     border: #12372A solid;
     margin: 15px;
+    width: 35vw;
     background-color: #FFFFFF;
 }
 
