@@ -66,11 +66,13 @@
         document.getElementById("student").addEventListener('click', function() {
             document.querySelectorAll("form h2")[0].style.display = 'flex';
             document.querySelectorAll("form h2")[1].style.display = 'none'; 
+            document.getElementById("role").value = "Student";
         });
 
         document.getElementById("technician").addEventListener('click', function() {
             document.querySelectorAll("form h2")[0].style.display = 'none';
             document.querySelectorAll("form h2")[1].style.display = 'flex'; 
+            document.getElementById("role").value = "Technician";
         });
 
         var registerForm = document.getElementById("registerform");
