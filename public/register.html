@@ -22,22 +22,12 @@
         </header>
         <input type="checkbox" id="optionsCheckbox">
         <ul id="options">
-            <label for="login" id="loginbutton"><li>Log In</li></label>
             <!--<a href="/settings" target="_blank"><li>Settings</li></a> -->
             <input type="checkbox" id="darkmode">
             <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
             <!-- <a href="#" target="_blank"><li>Credits</li></a> -->
         </ul>
-        <input type="checkbox" id="login">
-        <form id="loginform" action="/login" method="post">
-            <button class="close">x</button>
-            <label for="email">Please enter your DLSU email:</label>
-            <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
-            <label for="password">Please enter your password:</label>
-            <input type="password" id="password" name="password" required><br>
-            <input type="submit" value="Log in">
-        </form>
         <input type="radio" name="accountType" id="student">
         <input type="radio" name="accountType" id="technician">
         <form id="registerform" action="/register" method="POST">
