@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Genota K. A., Sales, L.M., & Trias, L. I. (2024)">
+        <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
+        <link rel="icon" type="image/x-icon" href="icon.ico">
+        <title>Login</title>
+        <link id="light-theme" rel="stylesheet" type="text/css" href="css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="css/darkmode.css" disabled>
+        <script defer src="dashboard.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="/dashboard" target="_self">
+                <img id="logo" src="images/logo.png" alt="iLABu logo" height="100">
+            </a>
+            <h1>Login to your account</h1>
+            <label for="optionsCheckbox" id="optionsIcon"></label>
+        </header>
+        <input type="checkbox" id="optionsCheckbox">
+        <ul id="options">
+            <label for="register" id="registerbutton"><li>Register</li></label>
+            <input type="checkbox" id="darkmode">
+            <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
+        </ul>
+        <input type="checkbox" id="register">
+        <form id="registerform" action="/register" method="post">
+            <button class="close">x</button>
+            <label for="email">Please enter your DLSU email:</label>
+            <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
+            <label for="password">Please enter your password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="confirmPW">Please confirm your password:</label>
+            <input type="password" id="confirmPW" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+        <form id="loginform" action="/login" method="post">
+            <label for="email">Please enter your DLSU email:</label>
+            <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
+            <label for="password">Please enter your password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Log in">
+        </form>
+    </body>
+    <script>
+        document.getElementById("darkmode").addEventListener('change', function() {
+            const darkTheme = document.getElementById("dark-theme");
+            if (this.checked) {
+                darkTheme.removeAttribute('disabled');
+            } else {
+                darkTheme.setAttribute('disabled', 'disabled');
+            }
+        });
+    </script>
+</html>
