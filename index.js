@@ -1,34 +1,20 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/')
+mongoose.connect('mongodb://localhost:27017/ilabu')
 
-const express = require('express')
-const session = require("express-session")
-const path = require('path')
-const bodyParser = require('body-parser')
+const express = require('express');
+const session = require("express-session");
+const bodyParser = require('body-parser');
+const path = require('path');
+const fileUpload = require('express-fileupload');
+const app = express();
 
-//For uploading files
-const fileUpload = require('express-fileupload')
-
-const app = new express();
-
-/* Database Collections */
-//const Reservation = require("./model/reservation")
-//const Profile = require("./model/profile")
-//const User = require("./model/user")
-
-
-/*Import route from controller folder  */
-const studentRoutes = require('./controller/student')
-const landingRoutes = require('./controller/landing')
+const User = require("./model/User");
 
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileUpload());
 
-app.use(express.static(path.join(__dirname + "/public"))); 
-
-// Session middleware setup
 app.use(
     session({
         secret: "secret-key",
@@ -36,15 +22,20 @@ app.use(
         saveUninitialized: false,
     })
 );
-/*  Import route from controller folder */
+
+/* Import routes from controller folder */
+const studentRoutes = require('./controller/student');
+const landingRoutes = require('./controller/landing');
 app.use('/', studentRoutes);
 app.use('/', landingRoutes);
 
+app.use(express.static(path.join(__dirname + "/public")));
 
 /* Handlebars */
-var hbs = require('hbs')
-app.set('view engine','hbs');
+var hbs = require('hbs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
 var server = app.listen(3000, function() {
-	console.log("listening to port 3000...");
+    console.log("listening to port 3000...");
 });

@@ -22,34 +22,29 @@
         </header>
         <input type="checkbox" id="optionsCheckbox">
         <ul id="options">
-            <label for="login" id="loginbutton"><li>Log In</li></label>
             <!--<a href="/settings" target="_blank"><li>Settings</li></a> -->
             <input type="checkbox" id="darkmode">
             <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
             <!-- <a href="#" target="_blank"><li>Credits</li></a> -->
         </ul>
-        <input type="checkbox" id="login">
-        <form id="loginform" action="/login" method="post">
+        <input type="radio" name="accountType" id="student">
+        <input type="radio" name="accountType" id="technician">
+        <form id="registerform" action="/register" method="POST">
             <button class="close">x</button>
+            <h2 class="student">Student<br></h2>
+            <h2 class="technician">Technician<br></h2>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name ="firstName" required><br>
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name ="middleName" required><br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name ="lastName" required><br>
+            <input type="hidden" id="role" name="role">
             <label for="email">Please enter your DLSU email:</label>
             <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
             <label for="password">Please enter your password:</label>
             <input type="password" id="password" name="password" required><br>
-            <input type="submit" value="Log in">
-        </form>
-        <input type="radio" name="accountType" id="student">
-        <input type="radio" name="accountType" id="technician">
-        <form id="registerform">
-            <button class="close">x</button>
-            <h2 class="student">Student<br></h2>
-            <h2 class="technician">Technician<br></h2>
-            <label for="email">Please enter your DLSU email:</label>
-            <input type="email" id="email" required pattern=".+@dlsu\.edu\.ph"><br>
-            <label for="password">Please enter your password:</label>
-            <input type="password" id="password" required><br>
-            <label for="confirmPW">Please confirm your password:</label>
-            <input type="password" id="confirmPW" required><br><br>
             <input type="submit" value="Register">
         </form>
         <main>
@@ -61,11 +56,13 @@
         document.getElementById("student").addEventListener('click', function() {
             document.querySelectorAll("form h2")[0].style.display = 'flex';
             document.querySelectorAll("form h2")[1].style.display = 'none'; 
+            document.getElementById("role").value = "Student";
         });
 
         document.getElementById("technician").addEventListener('click', function() {
             document.querySelectorAll("form h2")[0].style.display = 'none';
             document.querySelectorAll("form h2")[1].style.display = 'flex'; 
+            document.getElementById("role").value = "Technician";
         });
 
         var registerForm = document.getElementById("registerform");
