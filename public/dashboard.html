@@ -73,36 +73,27 @@
         <div id="sidebar">
             <div id="logged">
                 <a href="student"><img src="images/pfp.png" height="200px" alt="Profile Picture"></a>
-                <h1>Full Name</h1>
-                <h2>Student</h2>
+                <h1>{{user.firstName}} {{user.middleName}} {{user.lastName}}</h1>
+                <h2>{{user.role}}</h2>    
                 <ul id="userreservations">
                     <a href="LS/LS212.html" target="_blank">
                         <li style="background-image: url(images/LS212.png);">
                             <span>LS 212</span> June 23 18:30
                         </li>
                     </a>
-                    <!-- <a href="Andrew/AG1904.html" target="_blank">
-                        <li style="background-image: url(images/AG1706.png);">
-                            <span>AG 1904</span> June 27 05:30
-                        </li>
-                    </a>
-                    <a href="Velasco/VL101.html" target="_blank">
-                        <li style="background-image: url(images/LS212.png);">
-                            <span>VL 101</span> June 30 9:30
-                        </li>
-                    </a> -->
                 </ul>
-            </div>
-            <form id="dashboardlogin" hidden>
-                <label for="email">Please enter your DLSU email:</label>
-                <input type="email" id="email" required pattern=".+@dlsu\.edu\.ph"><br>
-                <label for="password">Please enter your password:</label>
-                <input type="password" id="password" required><br>
-                <input type="submit" value="Log in">
-                <h3>Don't have an account yet?</h3>
-                <a href="register.html" target="_blank">Register</a>
-            </form>
+            </div>            
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/user')
+                .then(response => response.json())
+                .then(user => {
+                    document.querySelector('#logged h1').textContent = `${user.firstName} ${user.middleName} ${user.lastName}`;
+                    document.querySelector('#logged h2').textContent = user.role;
+                });
+        });
+        </script>
 </body>
 </html>
