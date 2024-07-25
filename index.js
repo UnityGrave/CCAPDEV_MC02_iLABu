@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const app = express();
+const MongoStore = require('connect-mongo')(session);
+
 
 const User = require("./model/User");
 
@@ -20,6 +22,8 @@ app.use(
         secret: "secret-key",
         resave: false,
         saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
+        cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
     })
 );
 
