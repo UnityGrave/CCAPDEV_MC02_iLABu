@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
+const uniqueValidator = require('mongoose-unique-validator');
 
 const userSchema = new mongoose.Schema({
     firstName: { type: String, required: true },
@@ -13,7 +14,9 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(AutoIncrement, { inc_field: 'userID', start_seq: 5004 });
+userSchema.plugin(uniqueValidator, { message: 'Error, email is already in use.' });
 
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+

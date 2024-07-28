@@ -13,7 +13,15 @@ router.get('/register', function(req, res) {
 });
 
 router.get('/dashboard', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/dashboard.html"));
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
+    res.render('dashboard', {
+        firstName: req.session.user.firstName,
+        middleName: req.session.user.middleName,
+        lastName: req.session.user.lastName,
+        role: req.session.user.role,
+    });
 });
 
 router.post('/login', async function(req, res) {
@@ -33,6 +41,9 @@ router.post('/login', async function(req, res) {
         } else {
             req.session.user = {
                 id: user.userID,
+                firstName: user.firstName,
+                middleName: user.middleName,
+                lastName: user.lastName,
                 email: user.email,
                 role: user.role,
             };
@@ -67,7 +78,7 @@ router.post('/register', async function(req, res) {
         });
 
         await newUser.save();
-        res.redirect('/dashboard');
+        res.redirect('/landingpage');
     } catch (error) {
         console.error(error);
         res.status(500).send('/landingpage');

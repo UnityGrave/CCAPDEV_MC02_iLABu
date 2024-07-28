@@ -69,6 +69,7 @@
         registerForm.addEventListener("submit", function(e) {
             if (document.getElementById("password").value === document.getElementById("confirmPW").value) {
                 alert("Account Created Successfully!");
+                window.location.href = "/login"; // Redirect to login.html
             } else {
                 alert("Passwords do not match. Please try again");
                 e.preventDefault();
