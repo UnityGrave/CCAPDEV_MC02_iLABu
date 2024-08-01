@@ -4,84 +4,80 @@ const bodyParser = require('body-parser');
 var router = express.Router();
 var path = require('path');
 
-app.use(bodyParser.json());
-app.use(express.static('public'));
+router.use(bodyParser.json());
+router.use(express.static('public'));
 
 let reservations = [];
 
-app.post('/reserve', (req, res) => {
+router.post('/reserve', (req, res) => {
     const reservation = req.body;
     reservations.push(reservation);
     res.json({ message: 'Reservation successful', reservation });
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
-
 //Student Profile
 router.get('/student', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/profile.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/profile.html"));
 });
 
 router.get('/profileedit', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/profileedit.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/profileedit.html"));
 });
 
 router.get('/LS', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
 });
 
 router.get('/LS212', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
 });
 
 router.get('/Yuch', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
 });
 
 router.get('/EY602', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
 });
 
 router.get('/Velasco', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/Velasco.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/Velasco.html"));
 });
 
 router.get('/VL101', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/VL101.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/VL101.html"));
 });
 
 router.get('/Miguel', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
 });
 
 router.get('/SM303', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
 });
 
 router.get('/Goks', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/Goks.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/Goks.html"));
 });
 
 router.get('/GK301', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/GK306.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/GK306.html"));
 });
 
 router.get('/Andrew', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/Andrew.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/Andrew.html"));
 });
 
 router.get('/AG1706', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/AG1706.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/AG1706.html"));
 });
 
 router.get('/settings', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/settings.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/settings.html"));
 });
 
 router.get('/confirm', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/confirm.html"));
+    res.sendFile(path.join(__dirname + "\\" + "../public/student/confirm.html"));
 });
 
 module.exports = router;
