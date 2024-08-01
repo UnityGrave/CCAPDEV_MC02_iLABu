@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     userID: { type: Number, unique: true }
 });
 
-userSchema.plugin(AutoIncrement, { inc_field: 'userID', start_seq: 5004 });
+userSchema.plugin(AutoIncrement, { inc_field: 'userID', start_seq: 1});
 
 const User = mongoose.model('User', userSchema);
 

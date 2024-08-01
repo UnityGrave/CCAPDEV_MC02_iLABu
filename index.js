@@ -9,6 +9,7 @@ const fileUpload = require('express-fileupload');
 const app = express();
 
 const User = require("./model/User");
+const Reserve = require("./model/reserve");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));

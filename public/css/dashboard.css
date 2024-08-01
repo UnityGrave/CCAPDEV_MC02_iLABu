@@ -346,7 +346,7 @@ td label{
     margin-top: 5vh;
 }
 
-input[type="date"] , input[type="time"]{
+input[type="date"] , select[type="time"]{
     height: 10vmin;
     width: 35vmin;
     border-radius: 30px;

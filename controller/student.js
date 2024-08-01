@@ -2,15 +2,75 @@ var express = require('express');
 const session = require("express-session");
 var router = express.Router();
 var path = require('path');
+const Reserve = require('../model/reserve');
+const User = require('../model/User');
 
-//Student Profile
+router.get('/settings', function(req, res) {
+	res.sendFile(path.join(__dirname + "\\" + "../public/student/settings.html"));
+});
+
 router.get('/student', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/profile.html"));
-});
+        res.render('profile', {
+            user: {
+                firstName: req.session.user.firstName,
+                middleName: req.session.user.middleName,
+                lastName: req.session.user.lastName,
+                email: req.session.user.email,
+                image: req.session.user.image
+            },
+        });
+    });
 
-router.get('/profileedit', function(req, res) {
-	res.sendFile(path.join(__dirname + "\\" + "../public/student/profileedit.html"));
-});
+
+router.get('/profileedit' , async (req, res) => {
+    const id = req.session.user.userID;
+    const user = await User.find({ userID:id }) 
+    console.log(user)
+    res.render('profileedit',{user})
+    });
+
+router.post('/profileedit', async (req, res) => {
+        try {
+            const { firstName, middleName, lastName, email } = req.body;
+            const id = req.session.user.userID;
+            const user = await User.findOne({ userID: id });
+
+            if (!user) {
+                return res.status(404).send('User not found');
+            }
+
+            user.firstName = firstName;
+            user.middleName = middleName;
+            user.lastName = lastName;
+            user.email = email;
+            
+            let image = req.session.user.image;
+    
+            if (req.files && req.files.image) {
+                let uploadedImage = req.files.image;
+                let imagePath = path.join(__dirname, '../public/images/', uploadedImage.name);
+                await uploadedImage.mv(imagePath);
+                image = '/images/' + uploadedImage.name;
+            }
+
+            req.session.user.image = image;
+
+            await user.save();
+            req.session.user = {
+                userID: user.userID,
+                firstName: user.firstName,
+                middleName: user.middleName,
+                lastName: user.lastName,
+                email: user.email,
+                image: user.image
+            }
+
+            res.redirect('/student');
+        } catch (err) {
+            console.error(err);
+            res.status(500).send('Internal Server Error');
+        }
+    });
 
 router.get('/LS', function(req, res) {
 	res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
@@ -66,6 +126,41 @@ router.get('/settings', function(req, res) {
 
 router.get('/confirm', function(req, res) {
 	res.sendFile(path.join(__dirname + "\\" + "../public/student/confirm.html"));
+});
+
+router.post('/reserve', async (req, res) => {
+    try {
+        const { slot, date, time } = req.body;
+        const userId = 1;
+
+        const newReservation = new Reserve({
+            roomnumber: req.body.roomnumber,
+            building: req.body.building,
+            seat: slot,
+            date: new Date(date),
+            time: new Date(date + 'T' + time),
+            reserveUser: userId,
+            reserveId: Date.now()
+        });
+
+        await newReservation.save();
+        res.redirect('/confirm');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
+router.post('/deleteAccount', async (req, res) => {
+    try {
+        const id = req.session.user.userID;
+        await User.deleteOne({ userID: id });
+        req.session.destroy();
+        res.redirect('/landingpage');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
 });
 
 module.exports = router;
