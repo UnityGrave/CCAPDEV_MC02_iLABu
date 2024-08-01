@@ -5,8 +5,7 @@ var labels = document.querySelectorAll('label[for^="s"]');
 
 inputs.forEach(function(input, index) {
     input.addEventListener("change", function() {
-        var tds = document.querySelectorAll('td');
-        tds.forEach(function(td) {
+        document.querySelectorAll('td').forEach(function(td) {
             td.classList.remove('selected');
         });
         
@@ -18,8 +17,7 @@ inputs.forEach(function(input, index) {
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-        var tds = document.querySelectorAll('td');
-        tds.forEach(function(td) {
+        document.querySelectorAll('td').forEach(function(td) {
             td.classList.remove('selected');
         });
         inputs.forEach(function(input) {
@@ -28,8 +26,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-var takenSlots = document.querySelectorAll('.taken');
-takenSlots.forEach(function(slot) {
+document.querySelectorAll('.taken').forEach(function(slot) {
     var label = slot.querySelector('label');
     if (label) {
         var p = document.createElement('p');
@@ -67,26 +64,16 @@ timeInput.value = formattedTime;
 
 const reserveButton = document.getElementById("reserve");
 const slotRadios = document.querySelectorAll('input[name="slot"]');
-    
+
 function isSlotSelected() {
-    for (const radio of slotRadios) {
-        if (radio.checked) {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-for (const radio of slotRadios) {
-    radio.addEventListener("change", updateReserveButtonState);
+    return Array.from(slotRadios).some(radio => radio.checked);
 }
 
 function timeTravel() {
-    const selectedDateTime = new Date(dateInput.value + 'T' + timeInput.value);
+    const selectedDateTime = new Date(`${dateInput.value}T${timeInput.value}`);
     const currentDateTime = new Date();
-    const graceperiod = new Date(currentDateTime.getTime() - 5*60000);
-    return selectedDateTime < graceperiod;
+    const gracePeriod = new Date(currentDateTime.getTime() - 5 * 60000);
+    return selectedDateTime < gracePeriod;
 }
 
 function updateReserveButtonState() {
@@ -99,6 +86,10 @@ function updateReserveButtonState() {
     }
 }
 
+slotRadios.forEach(radio => {
+    radio.addEventListener("change", updateReserveButtonState);
+});
+
 reserveButton.addEventListener('click', function(event) {
     event.preventDefault();
     document.getElementById("login").checked = true;
@@ -107,14 +98,13 @@ reserveButton.addEventListener('click', function(event) {
     const selectedDate = dateInput.value;
     const selectedTime = timeInput.value;
 
-    // Extract room name from the current URL
     const roomName = window.location.pathname.split('/').pop().split('.')[0];
 
     const reservationData = {
         slot: selectedSlot,
         date: selectedDate,
         time: selectedTime,
-        room: roomName // Include the room name in the reservation data
+        room: roomName
     };
 
     fetch('/reserve', {
@@ -134,7 +124,7 @@ reserveButton.addEventListener('click', function(event) {
 });
 
 const reservedetailsElements = document.querySelectorAll('td.taken .reservedetails');
-var zIndex = 1;
+let zIndex = 1;
 
 reservedetailsElements.forEach(details => {
     const clonedDetails = details.cloneNode(true);
@@ -190,7 +180,7 @@ reservedetailsElements.forEach(details => {
     }
 });
 
-if (logged){
+if (logged) {
     reserveButton.addEventListener('click', function() {
         document.querySelector('form').submit();
         window.open('/confirm', '_self');
