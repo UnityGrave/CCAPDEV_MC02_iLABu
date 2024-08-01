@@ -1,16 +1,16 @@
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/ilabu')
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/ilabu');
 
 const express = require('express');
-const session = require("express-session");
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fileUpload = require('express-fileupload');
+const MongoStore = require('connect-mongo');
+
 const app = express();
-const MongoStore = require('connect-mongo')(session);
 
-
-const User = require("./model/User");
+const User = require('./model/User');
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,10 +19,10 @@ app.use(fileUpload());
 
 app.use(
     session({
-        secret: "secret-key",
+        secret: 'secret-key',
         resave: false,
         saveUninitialized: false,
-        store: new MongoStore({ mongooseConnection: mongoose.connection }),
+        store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/ilabu' }),
         cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
     })
 );
@@ -33,13 +33,13 @@ const landingRoutes = require('./controller/landing');
 app.use('/', studentRoutes);
 app.use('/', landingRoutes);
 
-app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(path.join(__dirname + '/public')));
 
 /* Handlebars */
 var hbs = require('hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-var server = app.listen(3000, function() {
-    console.log("listening to port 3000...");
+var server = app.listen(3000, function () {
+    console.log('listening to port 3000...');
 });
