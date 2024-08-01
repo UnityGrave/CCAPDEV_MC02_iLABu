@@ -37,10 +37,10 @@
         <a href="/profileedit" target="_blank"><li>Edit Profile</li></a>
     </ul>
     <input type="checkbox" id="deleteaccount">
-    <form id="deleteform">
+    <form id="deleteform" action="/deleteAccount" method="post">
         <button class="close">x</button>
         <h3>Are you sure you want to delete your account?</h3>
-        <a>Delete</a>
+        <button type="submit">Delete</button>
     </form>
     <input type="checkbox" id="clearreservations">
     <form id="reservationsform">
