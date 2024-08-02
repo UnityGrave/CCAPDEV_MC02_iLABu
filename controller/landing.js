@@ -9,7 +9,7 @@ router.get('/landingpage', function(req, res) {
 });
 
 router.get('/register', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/register.html"));
+    res.render('register', { error: req.query.error });
 });
 
 router.get('/dashboard', function(req, res) {
@@ -33,13 +33,13 @@ router.post('/login', async function(req, res) {
         const user = await User.findOne({ email: email });
 
         if (!user) {
-            return res.status(404).redirect('/login?error=User not found. Please register.');
+            return res.render('register', { error: 'User does not exist!' });
         }
 
         const hashmatchchecker = await bcrypt.compare(password, user.password);
 
         if (!hashmatchchecker) {
-            return res.status(401).redirect('/login?error=Given Password was Incorrect');
+            return res.render('register', { error: 'Invalid Password!' });
         } else {
             if (req.files && req.files.image) {
                 const picture = req.files.image;
@@ -48,7 +48,7 @@ router.post('/login', async function(req, res) {
                 picture.mv(uploadPath, (err) => {
                     if (err) {
                         console.error('Error uploading file:', err);
-                        return res.status(500).send('Internal Server Error');
+                        return res.status(500).send('Error');
                     }
                 });
     
@@ -63,11 +63,12 @@ router.post('/login', async function(req, res) {
                 role: user.role,
                 image: user.image
             };
+
             res.redirect('/dashboard');
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).send('Error');
     }
 });
 
@@ -81,7 +82,19 @@ router.get("/logout", (req, res) => {
 router.post('/register', async function(req, res) {
     const { firstName, middleName, lastName, role, email, password } = req.body;
 
+    if (!firstName || !middleName || !lastName || !role || !email || !password) {
+        return res.render('register', { error2: 'Please fill all fields' });
+    }
+
     try {
+        const existingUser = await User.findOne({ email: email });
+        if (existingUser) {
+            return res.render('register', { error2: 'Email already exists' });
+        }
+
+            const uploadPath = path.join(__dirname, '../public/images', `pfp`);
+            image = path.basename(uploadPath);
+
         const passwordhash = await bcrypt.hash(password, 8);
 
         const newUser = new User({
@@ -90,7 +103,8 @@ router.post('/register', async function(req, res) {
             lastName: lastName,
             role: role,
             email: email,
-            password: passwordhash
+            password: passwordhash,
+            image: image
         });
 
         await newUser.save();

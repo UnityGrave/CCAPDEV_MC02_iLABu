@@ -1,32 +1,22 @@
 var express = require('express');
 const session = require("express-session");
-const bodyParser = require('body-parser');
 var router = express.Router();
 var path = require('path');
+const Reserve = require('../model/reserve');
+const User = require('../model/User');
 
-router.use(bodyParser.json());
-router.use(express.static('public'));
 
-let reservations = [];
-
-router.post('/reserve', (req, res) => {
-    const reservation = req.body;
-    reservations.push(reservation);
-    res.json({ message: 'Reservation successful', reservation });
-});
-
-//Student Profile
 router.get('/student', function(req, res) {
-        res.render('profile', {
-            user: {
-                firstName: req.session.user.firstName,
-                middleName: req.session.user.middleName,
-                lastName: req.session.user.lastName,
-                email: req.session.user.email,
-                image: req.session.user.image
-            },
-        });
+    res.render('profile', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
     });
+});
 
 router.get('/profileedit', async (req, res) => {
     const id = req.session.user.userID;
@@ -135,6 +125,29 @@ router.get('/settings', function(req, res) {
 
 router.get('/confirm', function(req, res) {
     res.sendFile(path.join(__dirname + "\\" + "../public/student/confirm.html"));
+});
+
+router.post('/reserve', async (req, res) => {
+    try {
+        const { slot, date, time } = req.body;
+        const userId = 1;
+
+        const newReservation = new Reserve({
+            roomnumber: req.body.roomnumber,
+            building: req.body.building,
+            seat: slot,
+            date: new Date(date),
+            time: new Date(date + 'T' + time),
+            reserveUser: userId,
+            reserveId: Date.now()
+        });
+
+        await newReservation.save();
+        res.redirect('/confirm');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
 });
 
 router.post('/deleteAccount', async (req, res) => {

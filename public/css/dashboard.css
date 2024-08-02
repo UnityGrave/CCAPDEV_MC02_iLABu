@@ -218,6 +218,14 @@ h1{
     align-items: center;
 }
 
+input[type="registertext"]{
+    border-radius: 30px;
+    border: #12372A solid;
+    margin: 15px;
+    width: 35vw;
+    background-color: #FFFFFF;
+}
+
 
 input[type="submit"], input[type="email"], input[type="password"]{
     border-radius: 30px;
@@ -346,7 +354,7 @@ td label{
     margin-top: 5vh;
 }
 
-input[type="date"] , input[type="time"]{
+input[type="date"] , select[type="time"]{
     height: 10vmin;
     width: 35vmin;
     border-radius: 30px;
