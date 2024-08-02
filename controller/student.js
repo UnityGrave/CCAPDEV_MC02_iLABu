@@ -72,7 +72,15 @@ router.post('/profileedit', async (req, res) => {
 });
 
 router.get('/LS', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
+    res.render('LS212', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
+    });
 });
 
 router.get('/LS212', function(req, res) {
@@ -80,11 +88,27 @@ router.get('/LS212', function(req, res) {
 });
 
 router.get('/Yuch', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
+    res.render('EY602', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
+    });
 });
 
 router.get('/EY602', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/EY602.html"));
+    res.render('EY602', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
+    });
 });
 
 router.get('/Velasco', function(req, res) {
@@ -96,27 +120,27 @@ router.get('/VL101', function(req, res) {
 });
 
 router.get('/Miguel', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
+    res.render('SM303', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
+    });
 });
 
 router.get('/SM303', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/SM303.html"));
-});
-
-router.get('/Goks', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/Goks.html"));
-});
-
-router.get('/GK301', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/GK306.html"));
-});
-
-router.get('/Andrew', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/Andrew.html"));
-});
-
-router.get('/AG1706', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/student/AG1706.html"));
+    res.render('SM303', {
+        user: {
+            firstName: req.session.user.firstName,
+            middleName: req.session.user.middleName,
+            lastName: req.session.user.lastName,
+            email: req.session.user.email,
+            image: req.session.user.image
+        },
+    });
 });
 
 router.get('/settings', function(req, res) {

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Genota K. A., Sales, L.M., & Trias, L. I. (2024)">
+        <meta name="description" content="CCAPDEV S19 MCO: Lab Reservation System">
+        <link rel="icon" type="image/x-icon" href="../icon.ico">
+        <title>LS 212</title>
+        <link id="light-theme" rel="stylesheet" type="text/css" href="../css/dashboard.css">
+        <link id="dark-theme" rel="stylesheet" type="text/css" href="../css/darkmode.css" disabled>
+        <script defer src="../dashboard.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="/dashboard" target="_self">
+                <img id="logo"src="../images/logo.png" alt="iLABu logo" height="100">
+            </a>
+            <h1> St. La Salle Hall Room 212</h1>
+            <div id="icons">
+                <!-- <a href="/student"><img src='../images/{{image}}' alt="Image" height="50px"></a> -->
+                <label for="optionsCheckbox" id="optionsIcon"></label>
+            </div>
+        </header>
+        <input type="checkbox" id="optionsCheckbox">
+        <ul id="options">
+            <!-- <label for="login" id="loginbutton"><li>Log In</li></label> -->
+            <a href="/settings" target="_blank"><li>Settings</li></a>
+            <input type="checkbox" id="darkmode">
+            <label for="darkmode" id="darkbutton"><li>Dark Mode</li></label>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><li>Remove Ads</li></a>
+            <!-- <a href="#" target="_blank"><li>Credits</li></a> -->
+            <a href="/landingpage" target="_self"><li>Log Out</li></a>
+        </ul>
+        <!-- <input type="checkbox" id="login">
+            <form id="loginform">
+            <button class="close">x</button>
+            <label for="email">Please enter your DLSU email:</label>
+            <input type="email" id="email" required pattern=".+@dlsu\.edu\.ph"><br>
+            <label for="password">Please enter your password:</label>
+            <input type="password" id="password" required><br>
+            <input type="submit" value="Log in">
+            <h3>Don't have an account yet?</h3>
+            <a href="../register.html" target="_blank">Register</a>
+        </form> --> 
+        <main>
+            <nav>
+                <ul id="labs">
+                    <a class="room" href="/LS212" target="_blank"><li>LS 212</li></a>
+                    <a class="room" href="/EY602" target="_blank"><li>EY 602</li></a>
+                    <a class="room" href="/SM303" target="_blank"><li>SM 303</li></a>
+                </ul>
+            </nav>
+            <form action="/reserve" method="POST">
+                <div id="info">
+                    <br>
+                    <h2>50 Slots Available</h2>
+                    <br>
+                    <div id="checkboxes">
+                        <input type="radio"name="slot" id="s1">
+                        <input type="radio"name="slot" id="s2">
+                        <input type="radio"name="slot" id="s3">
+                        <input type="radio"name="slot" id="s4">
+                        <input type="radio"name="slot" id="s5">
+                        <input type="radio"name="slot" id="s6">
+                        <input type="radio"name="slot" id="s7">
+                        <input type="radio"name="slot" id="s8">
+                        <input type="radio"name="slot" id="s9">
+                        <input type="radio"name="slot" id="s10">
+                        <input type="radio"name="slot" id="s11">
+                        <input type="radio"name="slot" id="s12">
+                        <input type="radio"name="slot" id="s13">
+                        <input type="radio"name="slot" id="s14">
+                        <input type="radio"name="slot" id="s15">
+                        <input type="radio"name="slot" id="s16">
+                        <input type="radio"name="slot" id="s17">
+                        <input type="radio"name="slot" id="s18">
+                        <input type="radio"name="slot" id="s19">
+                        <input type="radio"name="slot" id="s20">
+                        <input type="radio"name="slot" id="s21">
+                        <input type="radio"name="slot" id="s22">
+                        <input type="radio"name="slot" id="s23">
+                        <input type="radio"name="slot" id="s24">
+                        <input type="radio"name="slot" id="s25">
+                        <input type="radio"name="slot" id="s26">
+                        <input type="radio"name="slot" id="s27">
+                        <input type="radio"name="slot" id="s28">
+                        <input type="radio"name="slot" id="s29">
+                        <input type="radio"name="slot" id="s30">
+                        <input type="radio"name="slot" id="s31">
+                        <input type="radio"name="slot" id="s32">
+                        <input type="radio"name="slot" id="s33">
+                        <input type="radio"name="slot" id="s34">
+                        <input type="radio"name="slot" id="s35">
+                        <input type="radio"name="slot" id="s36">
+                        <input type="radio"name="slot" id="s37">
+                        <input type="radio"name="slot" id="s38">
+                        <input type="radio"name="slot" id="s39">
+                        <input type="radio"name="slot" id="s40">
+                        <input type="radio"name="slot" id="s41">
+                        <input type="radio"name="slot" id="s42">
+                        <input type="radio"name="slot" id="s43">
+                        <input type="radio"name="slot" id="s44">
+                        <input type="radio"name="slot" id="s45">
+                        <input type="radio"name="slot" id="s46">
+                        <input type="radio"name="slot" id="s47">
+                        <input type="radio"name="slot" id="s48">
+                        <input type="radio"name="slot" id="s49">
+                        <input type="radio"name="slot" id="s50">
+                    </div>              
+                    <table name="reservedusers">
+                        <tr>
+                            <td><label for="s1">1</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s2">2</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="taken"><label for="s3">3</label><a class="reservedetails"><img src="../pfp.png" height="35" hidden><div class="details"><p>Reserved anonymously</p><p>until </p></div></a></td>
+                            <td><label for="s4">4</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s5">5</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s6">6</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s7">7</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s8">8</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s9">9</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s10">10</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="s11">11</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s12">12</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s13">13</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s14">14</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s15">15</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s16">16</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s17">17</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s18">18</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s19">19</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s20">20</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="s21">21</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s22">22</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s23">23</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s24">24</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s25">25</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="taken"><label for="s26">26</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="https://lumiere-a.akamaihd.net/v1/images/marvel-thrawn-alliances-1-preview-article-feature_d5e0ed23.jpeg?region=0,0,1600,900" height="35"><div class="details"><p>Reserved by: Thrawn Vurawn</p><p>until </p></div></a></td>
+                            <td><label for="s27">27</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s28">28</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s29">29</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s30">30</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="s31">31</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s32">32</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s33">33</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s34">34</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s35">35</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s36">36</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s37">37</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s38">38</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td class="taken"><label for="s39">39</label><a href="../profile/profile4.html" target="_blank" class="reservedetails"><img src="https://i.pinimg.com/originals/16/69/2c/16692c248260ceadcb73963190b1f5e5.png" height="35"><div class="details"><p>Reserved by: Yu Narukami</p><p>until </p></div></a></td>
+                            <td><label for="s40">40</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                        </tr>
+                        <tr>
+                            <td><label for="s41">41</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s42">42</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s43">43</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s44">44</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s45">45</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s46">46</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s47">47</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s48">48</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s49">49</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                            <td><label for="s50">50</label><a href="../profile.html" target="_blank" class="reservedetails"><img src="../pfp.png" height="35"><div class="details"><p>Reserved by:</p><p>until </p></div></a></td>
+                        </tr>
+                    </table> 
+                    <div id="reservation">
+                        <div id="schedule">
+                            <input type="date" required>
+                            <select name= "time" type="time" required>
+                                <option value="8:00am">8:00 AM</option>
+                                <option value="9:00am">9:00 AM</option>
+                                <option value="10:00am">10:00 AM</option>
+                                <option value="11:00am">11:00 AM</option>
+                                <option value="12:00pm">12:00 PM</option>
+                                <option value="1:00pm">1:00 PM</option>
+                                <option value="2:00pm">2:00 PM</option>
+                                <option value="3:00pm">3:00 PM</option>
+                                <option value="4:00pm">4:00 PM</option>
+                                <option value="5:00pm">5:00 PM</option>
+                                <option value="6:00pm">6:00 PM</option>
+                            </select>
+    
+                        </div>
+                        <input id="reserve" type="submit" value="Reserve"></input>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <!--<script src="../room.js"></script>-->
+        <script>
+            var logged = true;
+
+var inputs = document.querySelectorAll('input[name="slot"]');
+var labels = document.querySelectorAll('label[for^="s"]');
+
+inputs.forEach(function(input, index) {
+    input.addEventListener("change", function() {
+        var tds = document.querySelectorAll('td');
+        tds.forEach(function(td) {
+            td.classList.remove('selected');
+        });
+        
+        if (input.checked) {
+            labels[index].parentNode.classList.add('selected');
+        }
+    });
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        var tds = document.querySelectorAll('td');
+        tds.forEach(function(td) {
+            td.classList.remove('selected');
+        });
+        inputs.forEach(function(input) {
+            input.checked = false;
+        });
+    }
+});
+
+var takenSlots = document.querySelectorAll('.taken');
+takenSlots.forEach(function(slot) {
+    var label = slot.querySelector('label');
+    if (label) {
+        var p = document.createElement('p');
+        p.textContent = label.textContent;
+        slot.replaceChild(p, label);
+    }
+});
+
+function updateAvailableSlots() {
+    const totalSlots = document.querySelectorAll('#checkboxes input[type="radio"]').length;
+    const reservedSlots = document.querySelectorAll('.taken').length; 
+    const availableSlots = totalSlots - reservedSlots;
+    const availableSlotsElement = document.querySelector('h2');
+    if (availableSlotsElement) {
+        availableSlotsElement.innerText = `${availableSlots} Slots Available`;
+    }
+}
+
+updateAvailableSlots();
+
+var today = new Date();
+var nextWeek = new Date();
+nextWeek.setDate(today.getDate() + 7);
+var formattedToday = today.toISOString().substr(0, 10);
+var formattedNextWeek = nextWeek.toISOString().substr(0, 10);
+var dateInput = document.querySelector('input[type="date"]');
+dateInput.value = formattedToday;
+dateInput.setAttribute('min', formattedToday);
+dateInput.setAttribute('max', formattedNextWeek);
+
+const currentTime = new Date();
+const formattedTime = `${currentTime.getHours().toString().padStart(2, '0')}:${currentTime.getMinutes().toString().padStart(2, '0')}`;
+var timeInput = document.querySelector('input[type="time"]');
+timeInput.value = formattedTime;
+
+const reserveButton = document.getElementById("reserve");
+const slotRadios = document.querySelectorAll('input[name="slot"]');
+    
+function isSlotSelected() {
+    for (const radio of slotRadios) {
+        if (radio.checked) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+for (const radio of slotRadios) {
+    radio.addEventListener("change", updateReserveButtonState);
+}
+
+function timeTravel() {
+    const selectedDateTime = new Date(dateInput.value + 'T' + timeInput.value);
+    const currentDateTime = new Date();
+    const graceperiod = new Date(currentDateTime.getTime() - 5*60000);
+    return selectedDateTime < graceperiod;
+}
+
+function updateReserveButtonState() {
+    if (isSlotSelected() && !timeTravel()) {
+        reserveButton.disabled = false;
+        reserveButton.style.cursor = "pointer";
+    } else {
+        reserveButton.disabled = true;
+        reserveButton.style.cursor = "not-allowed";
+    }
+}
+
+reserveButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById("login").checked = true;        
+});
+
+const reservedetailsElements = document.querySelectorAll('td.taken .reservedetails');
+var zIndex = 1;
+
+reservedetailsElements.forEach(details => {
+    const clonedDetails = details.cloneNode(true);
+    clonedDetails.style.position = 'fixed';
+    clonedDetails.classList.add('cloned-reservedetails');
+    document.body.appendChild(clonedDetails);
+    const parentTd = details.closest('td');
+
+    let isHoveringTd = false;
+    let isHoveringDetails = false;
+    let hideTimeout;
+
+    parentTd.addEventListener('mouseenter', function() {
+        isHoveringTd = true;
+        showClonedDetails();
+        if (hideTimeout) {
+            clearTimeout(hideTimeout);
+        }
+    });
+
+    parentTd.addEventListener('mouseleave', function() {
+        isHoveringTd = false;
+        startHideTimer();
+    });
+
+    clonedDetails.addEventListener('mouseenter', function() {
+        isHoveringDetails = true;
+        clonedDetails.style.zIndex = ++zIndex;
+        if (hideTimeout) {
+            clearTimeout(hideTimeout);
+        }
+    });
+
+    clonedDetails.addEventListener('mouseleave', function() {
+        isHoveringDetails = false;
+        startHideTimer();
+    });
+
+    function showClonedDetails() {
+        const rect = parentTd.getBoundingClientRect();
+        clonedDetails.style.left = `${rect.left}px`;
+        clonedDetails.style.top = `calc(${rect.top}px - 1vh)`;
+        clonedDetails.style.display = 'flex';
+        clonedDetails.style.zIndex = ++zIndex;
+    }
+
+    function startHideTimer() {
+        hideTimeout = setTimeout(() => {
+            if (!isHoveringTd && !isHoveringDetails) {
+                clonedDetails.style.display = 'none';
+            }
+        }, 1000);
+    }
+});
+
+if (logged){
+    reserveButton.addEventListener('click', function() {
+        document.querySelector('form').submit();
+        window.open('/confirm', '_self');
+    });
+}
+        </script>
+    </body>
+</html>
