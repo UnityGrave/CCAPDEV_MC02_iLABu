@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+const bcrypt = require('bcrypt');
 const User = require('../model/User');
 
 router.get('/landingpage', function(req, res) {
@@ -12,22 +13,55 @@ router.get('/register', function(req, res) {
 });
 
 router.get('/dashboard', function(req, res) {
-    res.sendFile(path.join(__dirname + "\\" + "../public/dashboard.html"));
+    if (!req.session.user) {
+        return res.redirect('/login');
+    }
+    res.render('dashboard', {
+        userID: req.session.user.userID,
+        firstName: req.session.user.firstName,
+        middleName: req.session.user.middleName,
+        lastName: req.session.user.lastName,
+        role: req.session.user.role,
+        image: req.session.user.image,
+    });
 });
 
 router.post('/login', async function(req, res) {
     const { email, password } = req.body;
 
     try {
-        const user = await User.findOne({ email: email, password: password });
+        const user = await User.findOne({ email: email });
 
         if (!user) {
-            res.status(401).send('Invalid email or password');
+            return res.status(404).redirect('/login?error=User not found. Please register.');
+        }
+
+        const hashmatchchecker = await bcrypt.compare(password, user.password);
+
+        if (!hashmatchchecker) {
+            return res.status(401).redirect('/login?error=Given Password was Incorrect');
         } else {
+            if (req.files && req.files.image) {
+                const picture = req.files.image;
+                const uploadPath = path.join(__dirname, '../public/images', `${Date.now()}-${picture.name}`);
+    
+                picture.mv(uploadPath, (err) => {
+                    if (err) {
+                        console.error('Error uploading file:', err);
+                        return res.status(500).send('Internal Server Error');
+                    }
+                });
+    
+                user.image = path.basename(uploadPath);
+            }
             req.session.user = {
-                id: user.userID,
+                userID: user.userID,
+                firstName: user.firstName,
+                middleName: user.middleName,
+                lastName: user.lastName,
                 email: user.email,
                 role: user.role,
+                image: user.image
             };
             res.redirect('/dashboard');
         }
@@ -48,17 +82,19 @@ router.post('/register', async function(req, res) {
     const { firstName, middleName, lastName, role, email, password } = req.body;
 
     try {
+        const passwordhash = await bcrypt.hash(password, 8);
+
         const newUser = new User({
             firstName: firstName,
             middleName: middleName,
             lastName: lastName,
             role: role,
             email: email,
-            password: password
+            password: passwordhash
         });
 
         await newUser.save();
-        res.redirect('/dashboard');
+        res.redirect('/landingpage');
     } catch (error) {
         console.error(error);
         res.status(500).send('/landingpage');
