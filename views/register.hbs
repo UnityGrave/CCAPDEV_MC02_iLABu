@@ -35,11 +35,11 @@
             <label for="email">Please enter your DLSU email:</label>
             <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
             <label for="password">Please enter your password:</label>
-            <input type="password" id="password" name="password" required><br>
-            <label>
-                <input type="checkbox" name="rememberMe" id="rememberMe"> Remember Me
-            </label><br>
+            <input type="password" id="password" name="password" required>
             <input type="submit" value="Log in">
+            {{#if error}}
+                    {{error}}
+                {{/if}}
         </form>
         <input type="radio" name="accountType" id="student">
         <input type="radio" name="accountType" id="technician">
@@ -48,11 +48,11 @@
             <h2 class="student">Student<br></h2>
             <h2 class="technician">Technician<br></h2>
             <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required><br>
+            <input type="registertext" id="firstName" name="firstName" required><br>
             <label for="middleName">Middle Name:</label>
-            <input type="text" id="middleName" name="middleName" required><br>
+            <input type="registertext" id="middleName" name="middleName" required><br>
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required><br>
+            <input type="registertext" id="lastName" name="lastName" required><br>
             <input type="hidden" id="role" name="role">
             <label for="email">Please enter your DLSU email:</label>
             <input type="email" id="email" name="email" required pattern=".+@dlsu\.edu\.ph"><br>
@@ -60,6 +60,9 @@
             <input type="password" id="password" name="password" required><br>
             <div id="error-message" style="color: red;"></div>
             <input type="submit" value="Register">
+            {{#if error2}}
+                    {{error2}}
+                {{/if}}
         </form>
         <main>
             <label for="student" id="student"><img src="images/student.png" width="200">Student</label>
