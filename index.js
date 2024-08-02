@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/ilabu');
-
+const multer = require('multer');
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
