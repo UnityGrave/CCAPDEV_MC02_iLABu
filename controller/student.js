@@ -28,55 +28,58 @@ router.get('/student', function(req, res) {
         });
     });
 
-router.get('/profileedit' , async (req, res) => {
+router.get('/profileedit', async (req, res) => {
     const id = req.session.user.userID;
-    const user = await User.find({ userID:id }) 
-    console.log(user)
-    res.render('profileedit',{user})
-    });
+    const user = await User.findOne({ userID: id });
+    res.render('profileedit', { user });
+});
 
 router.post('/profileedit', async (req, res) => {
-        try {
-            const { firstName, middleName, lastName, email } = req.body;
-            const id = req.session.user.userID;
-            const user = await User.findOne({ userID: id });
+    try {
+        const { firstName, middleName, lastName, email } = req.body;
+        const id = req.session.user.userID;
+        const user = await User.findOne({ userID: id });
 
-            if (!user) {
-                return res.status(404).send('User not found');
-            }
-
-            user.firstName = firstName;
-            user.middleName = middleName;
-            user.lastName = lastName;
-            user.email = email;
-            
-            let image = req.session.user.image;
-    
-            if (req.files && req.files.image) {
-                let uploadedImage = req.files.image;
-                let imagePath = path.join(__dirname, '../public/images/', uploadedImage.name);
-                await uploadedImage.mv(imagePath);
-                image = '/images/' + uploadedImage.name;
-            }
-
-            req.session.user.image = image;
-
-            await user.save();
-            req.session.user = {
-                userID: user.userID,
-                firstName: user.firstName,
-                middleName: user.middleName,
-                lastName: user.lastName,
-                email: user.email,
-                image: user.image
-            }
-
-            res.redirect('/student');
-        } catch (err) {
-            console.error(err);
-            res.status(500).send('Error');
+        if (!user) {
+            return res.status(404).send('User not found');
         }
-    });
+
+        user.firstName = firstName;
+        user.middleName = middleName;
+        user.lastName = lastName;
+        user.email = email;
+
+        if (req.files && req.files.image) {
+            const picture = req.files.image;
+            const uploadPath = path.join(__dirname, '../public/images', `${Date.now()}-${picture.name}`);
+
+            picture.mv(uploadPath, (err) => {
+                if (err) {
+                    console.error('Error uploading file:', err);
+                    return res.status(500).send('Internal Server Error');
+                }
+            });
+
+            user.image = path.basename(uploadPath);
+        }
+
+        await user.save();
+        req.session.user = {
+            userID: user.userID,
+            firstName: user.firstName,
+            middleName: user.middleName,
+            lastName: user.lastName,
+            email: user.email,
+            role: user.role,
+            image: user.image
+        };
+
+        res.redirect('/student');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 router.get('/LS', function(req, res) {
     res.sendFile(path.join(__dirname + "\\" + "../public/student/LS212.html"));
