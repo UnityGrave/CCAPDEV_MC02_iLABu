@@ -1,8 +1,0 @@
---READ ME--
-So you want to try running this project in your own computer, well follow these steps:
-
-1. Download and Extract zip file into your computer
-2. Open the Command Prompt and enter the file path of the project. (You can right click the folder and then click "copy as path", then type "cd <filepath>"
-3. Type npm install express express-fileupload hbs mongoose express-session mongoose body-parser path mongoose-sequence bcrypt multer
-4. After the successful install of all the middleware, type node index.js. Make sure that you're still at the directory where index.js is.
-5. Type localhost:3000 at any web browser and the app should be running perfectly. :D
