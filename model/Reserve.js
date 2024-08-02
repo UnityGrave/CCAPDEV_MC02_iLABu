@@ -1,14 +1,16 @@
 const e = require('express')
 const mongoose = require('mongoose')
 
-const ResesrveSchema = new mongoose.Schema({
+const ReserveSchema = new mongoose.Schema({
     roomnumber: String,
     building: String,
+    seat: { type: Number, unique: true },
     date: { type: Date },
-    startTime: { type: Date },
-    endTime: { type: Date }, 
+    time: { type: Date },
+    reserveUser: String, 
+    reserveId: { type: Number, unique: true }
 })
 
-const Post = mongoose.model('Reserve', ResesrveSchema)
+const Reserve = mongoose.model('Reserve', ReserveSchema)
 
-module.exports = Reserve
+module.exports = Reserve;
